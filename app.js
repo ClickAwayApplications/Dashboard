@@ -34,14 +34,15 @@ app.get('/createdb', (req, res) => {
 
 //create table 
 app.get('/registration', (req, res) => {
-    let sql = `CREATE TABLE UserProfileTable (id int AUTO_INCREMENT, 
+    let sql = `CREATE TABLE UserProfileTable (
+        ID_NUMBER INT, 
         ROLE VARCHAR(255), 
         NAME VARCHAR(255), 
         SURNAME VARCHAR(255), 
         EMAIL VARCHAR(255), 
         CONTACT VARCHAR(255), 
         PASSWORD VARCHAR(255), 
-        PRIMARY KEY (id))`;
+        PRIMARY KEY (ID_NUMBER))`;
     db.query(sql, (err, result) => {
         if (err)
             throw err;
@@ -53,7 +54,7 @@ app.get('/registration', (req, res) => {
 // //inserting User Profile Data
 app.get('/profileData', (req, res) => {
     let post = { 
-                 ROLE: '1',
+                 ID_NUMBER: '9611025423083',
                  NAME: 'TERROR TIVANI',
                  SURNAME: 'MAYIMELE', 
                  EMAIL: 'terror.tivani@gmial.com',
